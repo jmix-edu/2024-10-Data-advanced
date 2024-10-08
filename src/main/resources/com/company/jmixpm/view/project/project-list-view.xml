@@ -9,6 +9,7 @@
             <fetchPlan extends="_base">
                 <property name="manager" fetchPlan="_base"/>
                 <property name="roadmap" fetchPlan="_base"/>
+                <property name="owner" fetchPlan="_base"/>
             </fetchPlan>
             <loader id="projectsDl" readOnly="true">
                 <query>
@@ -37,6 +38,7 @@
             <button id="createBtn" action="projectsDataGrid.create"/>
             <button id="editBtn" action="projectsDataGrid.edit"/>
             <button id="removeBtn" action="projectsDataGrid.remove"/>
+            <button id="dmCreate" text="Create with DataManager"/>
             <simplePagination id="pagination" dataLoader="projectsDl"/>
         </hbox>
         <dataGrid id="projectsDataGrid"
@@ -50,13 +52,19 @@
                 <action id="remove" type="list_remove"/>
             </actions>
             <columns resizable="true">
-                <column property="name"/>
-                <column property="startDate"/>
+                <column property="name" editable="true"/>
+                <column property="startDate" editable="true"/>
                 <column property="endDate"/>
                 <column property="manager"/>
                 <column property="status"/>
                 <column property="roadmap"/>
-                <column property="projectLabels"/>
+                <column property="projectLabels" editable="true"/>
+                <editorActionsColumn>
+                    <editButton icon="EDIT"/>
+                    <cancelButton icon="BAN"/>
+                </editorActionsColumn>
+                <column property="totalEstimatedEfforts"/>
+                <column property="owner"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">
