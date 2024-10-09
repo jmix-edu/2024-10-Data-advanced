@@ -7,6 +7,7 @@ import io.jmix.core.annotation.DeletedDate;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.entity.annotation.SystemLevel;
 import io.jmix.core.metamodel.annotation.*;
+import io.jmix.pessimisticlock.annotation.PessimisticLock;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -15,6 +16,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
+@PessimisticLock(timeoutSec = 10)
 @JmixEntity
 @Table(name = "PROJECT", indexes = {
         @Index(name = "IDX_PROJECT_MANAGER", columnList = "MANAGER_ID"),

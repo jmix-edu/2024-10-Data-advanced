@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://jmix.io/schema/flowui/menu">
 
+    <menu opened="true" id="app-audit" description="msg://com.company.jmixpm/menu_config.app-audit.description"
+          title="msg://com.company.jmixpm/menu_config.app-audit.title">
+        <item view="TaskEntityLogListView"
+              title="msg://com.company.jmixpm.view.taskentityloglist/taskEntityLogListView.title"/>
+    </menu>
     <menu opened="true" id="application" title="msg://com.company.jmixpm/menu.application.title">
         <item view="User.list" title="msg://com.company.jmixpm.view.user/UserListView.title"/>
         <item view="Project.list" title="msg://com.company.jmixpm.view.project/projectListView.title"/>
@@ -9,11 +14,14 @@
         <item view="Roadmap.list" title="msg://com.company.jmixpm.view.roadmap/roadmapListView.title"/>
         <item view="ProjectStatsView" title="msg://com.company.jmixpm.view.projectstats/projectStatsView.title"/>
         <item view="WorkLoadView" title="msg://com.company.jmixpm.view.workload/workLoadView.title"/>
+        <item view="Task_repo.list" title="msg://com.company.jmixpm.view.task/tasRepokListView.title"/>
     </menu>
-    <menu id="customers" description="msg://com.company.jmixpm/menu_config.customers.description"
-          title="msg://com.company.jmixpm/menu_config.customers.title" opened="true">
+    <menu opened="true" id="customers" description="msg://com.company.jmixpm/menu_config.customers.description"
+          title="msg://com.company.jmixpm/menu_config.customers.title">
         <item view="Customer.list" title="msg://com.company.jmixpm.view.customer/customerListView.title"/>
         <item view="Order_.list" title="msg://com.company.jmixpm.view.order/orderListView.title"/>
         <item view="CustomSearchView" title="msg://com.company.jmixpm.view.customsearch/customSearchView.title"/>
+        <item view="CustomerSubstringSearchView"
+              title="msg://com.company.jmixpm.view.customersubstringsearch/customerSubstringSearchView.title"/>
     </menu>
 </menu-config>
